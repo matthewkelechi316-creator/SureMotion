@@ -1,0 +1,17 @@
+SUREMOTION MOBILE — GITHUB UPLOAD
+
+Upload the CONTENTS of this ZIP into the root of your existing SureMotion repository.
+The files should appear together:
+README.txt, UPLOAD_TO_GITHUB.txt, app.js, icon.svg, index.html,
+manifest.webmanifest, style.css, sw.js.
+
+Then open GitHub repository Settings > Pages.
+Choose Deploy from a branch, branch main, folder /(root), and Save.
+Wait for deployment, then open:
+https://matthewkelechi316-creator.github.io/SureMotion/
+
+Open it in Chrome on Android and use the browser menu to Install app / Add to Home screen.
+The first visit needs internet. After the app shell is cached, it can reopen offline.
+
+This is a working early prototype. Real MP4 rendering, persistent imported media,
+and full keyframe animation are not implemented yet.
