@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0d12">
+  <meta name="description" content="SureMotion — offline motion graphics studio">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <title>SureMotion Studio</title>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand-mark">S</div>
+      <div class="brand-copy"><strong>SureMotion</strong><span>STUDIO • MOBILE</span></div>
+      <button class="icon-btn" id="saveBtn" aria-label="Save project" title="Save project">↧</button>
+      <button class="export-btn" id="exportBtn">Export</button>
+    </header>
+
+    <section class="project-strip">
+      <div><span class="eyebrow">CURRENT PROJECT</span><strong id="projectName">Untitled Project</strong></div>
+      <button class="text-btn" id="renameBtn">Rename</button>
+    </section>
+
+    <section class="preview-panel panel">
+      <div class="panel-heading"><span>COMPOSITION VIEW</span><span class="status-dot">● <b>LIVE</b></span></div>
+      <div class="preview-stage-wrap">
+        <div class="preview-stage" id="previewStage">
+          <div class="safe-guides"></div>
+          <div class="preview-content" id="previewContent">
+            <div class="sample-kicker">YOUR MOTION</div>
+            <div class="sample-title">STARTS<br><em>HERE</em></div>
+            <div class="sample-footer">SUREMOTION STUDIO</div>
+          </div>
+          <span class="ratio-tag">9:16</span>
+        </div>
+      </div>
+      <div class="transport">
+        <button class="round-control" id="toStart" aria-label="Go to start">|◀</button>
+        <button class="play-control" id="playBtn" aria-label="Play">▶</button>
+        <button class="round-control" id="toEnd" aria-label="Go to end">▶|</button>
+        <span class="time-readout" id="timeReadout">00:00:00</span>
+      </div>
+    </section>
+
+    <section class="timeline-section">
+      <div class="section-title"><span>TIMELINE</span><button class="text-btn" id="addKeyframeBtn">◇ Add keyframe</button></div>
+      <div class="ruler" id="ruler">
+        <span>00:00</span><span>00:02</span><span>00:04</span><span>00:06</span><span>00:08</span>
+      </div>
+      <input id="playhead" class="playhead" type="range" min="0" max="8" step="0.01" value="0">
+      <div class="layer-list" id="layerList" aria-label="Layers"></div>
+    </section>
+
+    <section class="tools-section">
+      <div class="section-title"><span>ADD TO PROJECT</span><span class="muted">LOCAL WORKSPACE</span></div>
+      <div class="tool-grid">
+        <button class="tool-tile" data-add="Text"><span> T </span><b>Text</b></button>
+        <button class="tool-tile" data-add="Shape"><span>◇</span><b>Shape</b></button>
+        <button class="tool-tile" id="importImage"><span>▧</span><b>Image</b></button>
+        <button class="tool-tile" id="importVideo"><span>▶</span><b>Video</b></button>
+        <button class="tool-tile" id="importAudio"><span>♫</span><b>Audio</b></button>
+        <button class="tool-tile" data-add="Solid"><span>▰</span><b>Solid</b></button>
+        <button class="tool-tile" id="effectsBtn"><span>✧</span><b>Effects</b></button>
+        <button class="tool-tile" id="keyframeTool"><span>⌁</span><b>Animate</b></button>
+      </div>
+      <input hidden type="file" id="mediaPicker" accept="image/*,video/*,audio/*">
+    </section>
+
+    <section class="inspector panel" id="inspector">
+      <div class="section-title"><span>LAYER PROPERTIES</span><span class="muted" id="selectedLabel">No layer selected</span></div>
+      <div class="property-row"><label for="layerText">Layer text / name</label><input id="layerText" type="text" placeholder="Select a text layer"></div>
+      <div class="property-row"><label for="opacity">Opacity <b id="opacityValue">100%</b></label><input id="opacity" type="range" min="0" max="100" value="100"></div>
+      <div class="property-row"><label for="scale">Scale <b id="scaleValue">100%</b></label><input id="scale" type="range" min="25" max="200" value="100"></div>
+      <button class="delete-btn" id="deleteLayer">Delete selected layer</button>
+    </section>
+
+    <nav class="bottom-nav">
+      <button class="active"><span>✎</span>Editor</button>
+      <button id="projectsBtn"><span>▤</span>Projects</button>
+      <button id="layersBtn"><span>▱</span>Layers</button>
+      <button id="settingsBtn"><span>⚙</span>Settings</button>
+    </nav>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="./app.js"></script>
+</body>
+</html>

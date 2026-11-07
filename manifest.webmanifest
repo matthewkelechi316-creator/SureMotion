@@ -1,0 +1,14 @@
+{
+  "name": "SureMotion Studio",
+  "short_name": "SureMotion",
+  "description": "Offline portrait motion graphics editor",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0d12",
+  "theme_color": "#0b0d12",
+  "icons": [
+    {"src":"./icons/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}
+  ]
+}
